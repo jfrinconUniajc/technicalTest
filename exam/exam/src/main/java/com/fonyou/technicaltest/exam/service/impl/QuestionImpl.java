@@ -31,9 +31,11 @@ public class QuestionImpl implements QuestionService {
     @Override
     public List<QuestionDto> createQuestion(List<QuestionDto> questions, Long idTest) {
         List<QuestionDto> response = new ArrayList<>();
+        int point = 100/questions.size();
         for (QuestionDto obj:questions) {
             QuestionDto element;
             Question questionEntity = QuestionDto.DtoToEntity(obj);
+            questionEntity.setPoint(point);
             element = QuestionDto.entityToDto(questionRepository.save(questionEntity));
             element.setOptions(answerOptionService.createAnswerOptions(obj.getOptions(), element.getId()));
             response.add(element);
