@@ -20,6 +20,7 @@ public class StudentDto {
 
     public static StudentDto entityToDto(Student student) {
         return StudentDto.builder()
+                .id(student.getId())
                 .name(student.getName())
                 .age(student.getAge())
                 .city(student.getCity())

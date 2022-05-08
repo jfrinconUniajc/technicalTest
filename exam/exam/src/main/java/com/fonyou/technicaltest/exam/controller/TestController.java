@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * The type Test controller.
  */
 @RestController
-@RequestMapping("/Test")
+@RequestMapping("/test")
 public class TestController {
     private final TestService testService;
 
